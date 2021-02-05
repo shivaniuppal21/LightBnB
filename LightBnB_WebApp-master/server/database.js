@@ -74,9 +74,9 @@ const getAllReservations = function(guest_id, limit = 10) {
   GROUP BY properties.id, reservations.id
   ORDER BY reservations.start_date
   LIMIT $2;`
-  return pool.query(queryString, [guest_id, limit]).then(data => {
-    data.rows
-}).catch(() => {
+  return pool.query(queryString, [guest_id, limit]).then(data => 
+    data.rows)
+    .catch(() => {
     return null;
   });
 };
